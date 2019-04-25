@@ -2,19 +2,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	<title>Bienvenido</title>
 	<style>
 	
 		body {
-          font-family: Arial;
+          font-family: Arial, sans-serif;
           background-color:#f1f1f1;
           
         }
@@ -49,12 +50,12 @@
 		    font-size:280%; 
 		    color:rgb(171,0,15); 
 		    font-family:Arial
-		 }
-		  .my-header span { 
+		}
+		 .my-header span { 
 		    float: right;
 		    padding: 0px 10px;
 		   }
-		   .my-header .button {
+		 .my-header .button {
 		   
 			background-color:#333;
 		  	border: none;
@@ -123,6 +124,12 @@
           float: left;
           width: 25%; 
         }
+        a:link{
+        	color:Black;
+        	font:Arial,bold;
+        	text-decoration:none;
+        	font-size:110%;
+        }
 
         /* Clear floats after rows */ 
         .row:after {
@@ -141,14 +148,73 @@
 		  max-width: 960px;
 		  margin:0px 100px;
 		}
+		.my-header .dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
 		
+		.my-header .dropdown-content a {
+		  float: none;
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  text-align: left;
+		}
+		
+		.my-header .dropdown-content a:hover {
+		  background-color: #ddd;
+		}
+		
+		.my-header .dropdown:hover .dropdown-content {
+		  display: block;
+		}	
+        .my-header .dropdown {
+          float: right;
+          overflow: hidden;
+        }
+
+        .my-header .dropdown .dropbtn {
+          font-size: 16px;  
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: #333;
+          font-family: inherit;
+          margin: 0;
+        }
+		.my-header .dropdown:hover .dropdown-content {
+		  display: block;
+		}
 		
 	</style>
 </head>
 <body>
   	<div id="navbar" class="my-header">
   	 	<h1>SIGERE</h1>
-  	 	<button class="button">Cerrar Sesión</button>
+  	 	<div class="dropdown">
+		    <button class="dropbtn">Bienvenido,${firstname}
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content">
+		      <div class="Profile">
+		  	 		<!--<form action="logout" method="get">
+		  	 			button class="button">Cerrar Sesión</button>
+		  	 		</form>-->
+		  	 		<button class="button">Perfil del Usuario</button>
+		  	 </div>
+		      <div class="Log-out">
+		  	 		<form action="logout" method="get">
+		  	 			<button class="button">Cerrar Sesión</button>
+		  	 		</form>
+		  	 </div>
+		    </div>
+ 	    </div> 
   	 	<div class="search-container">
 		    <form action="/action_page.php">
 		      <input type="text" placeholder="Buscar" name="search">
@@ -163,34 +229,13 @@
 			<p style="font-size:150%; color:rgb(0,0,0); padding:10px 0px"> Zona de Proyectos:</p>
 		
 		</div>
-		<div class="row">
-	        <div class="column project">
-	          <div class="content">
-	            <img src="https://static.thenounproject.com/png/213124-200.png" alt="Market" style="width:50%; float:center">
-	            <h4>Supermercado</h4>
-	          </div>
-	        </div>
-	        <div class="column project">
-	          <div class="content">
-	            <img src="https://static.thenounproject.com/png/213124-200.png" alt="Market" style="width:50%">
-	            <h4>Minimarket</h4>
-	          </div>
-	        </div>
-	        <div class="column project">
-	          <div class="content">
-	            <img src="https://static.thenounproject.com/png/213124-200.png" alt="Market" style="width:50%">
-	            <h4>Franquicia</h4>
-	          </div>
-	        </div>
-	        
-	        <div class="column project">
-	          <div class="content">
-	            <img src="https://static.thenounproject.com/png/213124-200.png" alt="Market" style="width:50%">
-	            <h4>Sucursal</h4>
-	          </div>
-	        </div>
+		
+		 <div class="row">
+			 ${projects}
+	         
 	  	</div>
 	 </div>
+	 
   	<script>
 		window.onscroll = function() {myFunction()};
 		var navbar = document.getElementById("Title");
@@ -202,6 +247,7 @@
 		    navbar.classList.remove("sticky");
 		  }
 		}
+		
 	</script>
 </body>
 </html>
