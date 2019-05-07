@@ -315,7 +315,7 @@ input[type=text]:placeholder {
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <a class="navbar-brand mx-auto" href="/"><img src="https://cdn141.picsart.com/257937040000212.png?r1024x1024" width="60" height="70"></a>
+      <a class="navbar-brand mx-auto" href="/"><img src="https://i.ibb.co/6rdz9XG/Gato-Sigere.png" alt="Gato-Sigere" border="0" width="150" height="60"></a>
       <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />-->
     </div>
 

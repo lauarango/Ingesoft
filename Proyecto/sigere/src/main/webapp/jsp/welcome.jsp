@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 
 
@@ -124,7 +124,8 @@
           float: left;
           width: 25%; 
         }
-        a:link{
+        a:link,
+        a:visited{
         	color:Black;
         	font:Arial,bold;
         	text-decoration:none;
@@ -177,6 +178,11 @@
           float: right;
           overflow: hidden;
         }
+        
+        .CreateProject{
+        	float: right;
+          	overflow: hidden;
+        }
 
         .my-header .dropdown .dropbtn {
           font-size: 16px;  
@@ -196,7 +202,7 @@
 </head>
 <body>
   	<div id="navbar" class="my-header">
-  	 	<h1>SIGERE</h1>
+  	 	<img src="https://i.ibb.co/6rdz9XG/Gato-Sigere.png" width="170" height="60">
   	 	<div class="dropdown">
 		    <button class="dropbtn">Bienvenido,${firstname}
 		      <i class="fa fa-caret-down"></i>
@@ -204,13 +210,13 @@
 		    <div class="dropdown-content">
 		      <div class="Profile">
 		  	 		<!--<form action="logout" method="get">
-		  	 			button class="button">Cerrar SesiÃ³n</button>
+		  	 			button class="button">Cerrar Sesión</button>
 		  	 		</form>-->
 		  	 		<button class="button">Perfil del Usuario</button>
 		  	 </div>
 		      <div class="Log-out">
 		  	 		<form action="logout" method="get">
-		  	 			<button class="button">Cerrar SesiÃ³n</button>
+		  	 			<button class="button">Cerrar Sesión</button>
 		  	 		</form>
 		  	 </div>
 		    </div>
@@ -221,12 +227,16 @@
 		      <button type="submit"><i class="fa fa-search"></i></button>
 		    </form>
 	    </div>
-		<button class="button">Crear Nuevo Proyecto</button>
+	    <div class="CreateProject">
+		    <form action="crearproyecto">
+				<button class="button">Crear Nuevo Proyecto</button>
+			</form>
+		</div>
 	
 	</div>
 	<div class="main">
 		<div class="Zone">
-			<p style="font-size:150%; color:rgb(0,0,0); padding:10px 0px"> Zona de Proyectos:</p>
+			<p style="font-size:150%; color:rgb(0,0,0); padding-top:30px"> Tus proyectos:</p>
 		
 		</div>
 		

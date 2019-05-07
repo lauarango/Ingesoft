@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.proyectofinal.web.dao.ProjectDao;
 import com.proyectofinal.web.model.Project;
+import com.proyectofinal.web.model.ProjectCreate;
+import com.proyectofinal.web.model.User;
 
 public class ProjectServiceImpl implements ProjectService {
 
@@ -20,6 +22,16 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	public Project getProjectById(int id) {
 		return projectDao.getProjectById(id);
+	}
+
+	@Override
+	public void createProject(ProjectCreate project) {
+		projectDao.createProject(project);
+	}
+
+	@Override
+	public void linkProjectWithUser(ProjectCreate project, User user) {
+		projectDao.linkProjectWithUser(project, user);
 	}
 
 }

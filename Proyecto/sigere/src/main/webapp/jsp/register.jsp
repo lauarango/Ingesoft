@@ -1,11 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registration</title><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -68,6 +61,8 @@
 		    color:white; 
 		    font-family:Arial
 		}
+		
+		
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -75,14 +70,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylePrueba.css">
     <title>Registro</title>
 </head>
 <body>
 	<div id="navbar" class="my-header">
-	 	<tr style="float:center"><a class="navbar-brand mx-auto" href="/"><img src="https://cdn141.picsart.com/257937040000212.png?r1024x1024" width="60" height="70"></a>
+	 	<tr style="float:center"><a class="navbar-brand mx-auto"><img src="https://i.ibb.co/6rdz9XG/Gato-Sigere.png" width="250" height="100"></a>
         </tr>
-        <h1>SIGERE</h1>
 	</div> 
     <div class=main>
     	<div class="row">
@@ -91,24 +84,24 @@
                         <h1 style="padding: 15px 0px">Crea tu cuenta</h1>
                         <form:form id="regForm" modelAttribute="user" action="registerProcess"
 						method="post">
-                            <div class="form-group w-50 p-1">
+                            <div class="form-group w-50 p-1 col-md-2">
                                 Nombre de Usuario:
                                 <input type="text" name="username" class="form-control" required>
                             </div>
-                             <div class="form-group w-50 p-1">
+                             <div class="form-group w-50 p-1 col-md-2">
                                 Contraseña:
                                 <input type="password" name="password" class="form-control" required>
                             </div>
-                            <div class="form-group w-50 p-1">
+                            <div class="form-group w-50 p-1 col-md-2">
                                 Nombre:
                                 <input type="text" name="firstname" class="form-control" required>
                             </div>
-							<div class="form-group w-50 p-1">
+							<div class="form-group w-50 p-1 col-md-2">
                                 Apellido:
                                 <input type="text" name="lastname" class="form-control" required>
                             </div>
                             
-                            <div class="form-group w-50 p-1">
+                            <div class="form-group w-50 p-1 col-md-2">
                                 Correo:
                                 <input type="email" class="form-control" name="email" required>
                             </div>
@@ -132,48 +125,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-</body>
-</html>
-</head>
-<body>
-	<form:form id="regForm" modelAttribute="user" action="registerProcess"
-		method="post">
-
-		<table align="center">
-			<tr>
-				<td><form:label path="username">Username</form:label></td>
-				<td><form:input path="username" name="username" id="username" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="password">Password</form:label></td>
-				<td><form:password path="password" name="password"
-						id="password" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="firstname">FirstName</form:label></td>
-				<td><form:input path="firstname" name="firstname"
-						id="firstname" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="lastname">LastName</form:label></td>
-				<td><form:input path="lastname" name="lastname" id="lastname" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="email">Email</form:label></td>
-				<td><form:input path="email" name="email" id="email" /></td>
-			</tr>
-			
-
-			<tr>
-				<td><input type="submit" value="Submitt"></td>
-				</tr>
-			<tr></tr>
-			<tr>
-				<td></td>
-				<td><a href="home">Home</a></td>
-			</tr>
-		</table>
-	</form:form>
-	${message}
 </body>
 </html>

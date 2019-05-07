@@ -12,33 +12,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.proyectofinal.web.model.Project;
+import com.proyectofinal.web.model.Specification;
 import com.proyectofinal.web.model.Requirement;
 import com.proyectofinal.web.model.User;
-import com.proyectofinal.web.service.ProjectService;
+import com.proyectofinal.web.service.SpecificationService;
 import com.proyectofinal.web.service.RequirementService;
-
 @Controller
-public class ProjectController {
+public class RequirementController {
+	@Autowired
+	RequirementService requirementService;	
 	
 	@Autowired
-	ProjectService projectService;
-	
-	@Autowired
-	RequirementService requirementService;
-	  @RequestMapping(value = "/project", method = RequestMethod.GET)
+	SpecificationService specificationService;
+	  @RequestMapping(value = "/requirement", method = RequestMethod.GET)
 	  public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response,
 			  @RequestParam(name = "id") final int id) {
 		if (request.getSession().getAttribute("user") == null) {
 			return new ModelAndView("redirect:/home");
 		}
 		final User user = (User) request.getSession().getAttribute("user");
-		final List<Requirement> requirements = requirementService.getRequirementByProjectId(id);		
-		final Project project = projectService.getProjectById(id);
+		final List<Specification> specifications = specificationService.getSpecificationByRequirementId(id);		
+		final Requirement requirement = requirementService.getRequirementById(id);
 		final StringBuilder builder = new StringBuilder();
-		for (Requirement r : requirements) {
-			builder.append("<tr><td width=\"10%\">"+r.getId()+"</td>").append("<td width=\"40%\">").append("<a href = \"requirement?id=" + r.getId() + "\">").append(r.getDescr()).append("</a>").append("</td><td><a class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em></a><a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td></tr>");
+		for (Specification r : specifications) {
+			builder.append("Description: "+r.getDescr()+" Name:"+ r.getName()+" Id:"+ r.getId());
 		}
-	    return new ModelAndView("project").addObject("name", project.getName()).addObject("desc", project.getDescription()).addObject("id",project.getId()).addObject("requirements", builder.toString()).addObject("firstname",user.getFirstname());
+	    return new ModelAndView("requirement").addObject("specifications", builder.toString());
 	  }
 }
