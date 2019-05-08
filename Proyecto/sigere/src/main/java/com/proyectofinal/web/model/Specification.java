@@ -16,9 +16,10 @@ public class Specification{
 	private final String restriction;
 	private final String process;
 	private final String colateraleffect;
+	private final int requirementId;
 	
 	public Specification (final int id,final String code, final String name,final Date date, final int degreeofneed, final String description, final String entry,
-			final String font, final String outt, final String destiny, final String restriction, final String process, final String colateraleffect) {
+			final String font, final String outt, final String destiny, final String restriction, final String process, final String colateraleffect, final int requirementId) {
 		this.id=id;
 		this.code=code;
 		this.name=name;
@@ -32,7 +33,7 @@ public class Specification{
 		this.restriction=restriction;
 		this.process=process;
 		this.colateraleffect=colateraleffect;
-		
+		this.requirementId=requirementId;
 	}
 	
 	public int getId() {
@@ -85,6 +86,10 @@ public class Specification{
 	
 	public String getColateralEffect() {
 		return colateraleffect;
+	}
+	
+	public int getRequirementId() {
+		return requirementId;
 	}
 }
 

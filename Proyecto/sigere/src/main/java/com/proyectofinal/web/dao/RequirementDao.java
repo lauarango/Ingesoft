@@ -14,5 +14,4 @@ public interface RequirementDao {
 	
 	void createRequirement(ReqCreate requirement);
 	
-	void linkRequirementWithProject(ReqCreate requirement,Project project);
 }

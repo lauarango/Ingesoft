@@ -2,8 +2,14 @@ package com.proyectofinal.web.controllers;
 
 
 
+
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import javax.servlet.ServletException;
+
+import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,15 +37,11 @@ public class CreateProjectController {
 	  }
 	
 	@RequestMapping(value = "/crearproyecto", method = RequestMethod.POST)
-	  public ModelAndView postCreation(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("object") ProjectCreate project) {
+	  public ModelAndView postCreation(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("object") ProjectCreate project ) throws IOException, ServletException {
+
 		final User user = (User) request.getSession().getAttribute("user");
 		if (user == null) {
 			return new ModelAndView("redirect:/home");
-		}
-		if (project.getContextDiagram() == null) {
-			System.out.println("ME GUSTE EL PAPAYa");
-		} else {
-			System.out.println("NO ME GUSTA EL PAPAYA");
 		}
 		System.out.println("Name: "+project.getName()+ " Description: "+project.getDescription()+" Context: "+project.getContextDiagram());
 		projectService.createProject(project);

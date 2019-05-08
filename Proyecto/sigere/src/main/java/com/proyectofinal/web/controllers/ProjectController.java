@@ -37,7 +37,7 @@ public class ProjectController {
 		final Project project = projectService.getProjectById(id);
 		final StringBuilder builder = new StringBuilder();
 		for (Requirement r : requirements) {
-			builder.append("<tr><td width=\"10%\">"+r.getId()+"</td>").append("<td width=\"40%\">").append("<a href = \"requirement?id=" + r.getId() + "\">").append(r.getDescr()).append("</a>").append("</td><td><a class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em></a><a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td></tr>");
+			builder.append("<tr><td width=\"20%\">"+r.getReqId()+"</td>").append("<td width=\"40%\">").append("<a href = \"requirement?id=" + r.getId() + "\">").append(r.getName()).append("</a></td>").append("<td width=\"20%\">"+r.getType()+"</td>").append("<td><a class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em></a><a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td></tr>");
 		}
 	    return new ModelAndView("project").addObject("name", project.getName()).addObject("desc", project.getDescription()).addObject("id",project.getId()).addObject("requirements", builder.toString()).addObject("firstname",user.getFirstname());
 	  }

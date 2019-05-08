@@ -22,7 +22,7 @@ public class SpecificationDaoImpl implements SpecificationDao {
 	  
 	@Override
 	public List<Specification> getSpecificationByRequirementId(int id) {
-		String sql = "SELECT * FROM specifications INNER JOIN specificationsxrequirement ON(specificationsxrequirement.specificationId = specifications.id) WHERE requirementId = '" + id + "'";
+		String sql = "SELECT * FROM specifications WHERE requirementId = '" + id + "'";
 		return jdbcTemplate.query(sql, new SpecificationMapper());
 	}
 
@@ -39,7 +39,7 @@ class SpecificationMapper implements RowMapper<Specification> {
 
 	@Override
 	public Specification mapRow(ResultSet rs, int rowNum) throws SQLException {
-		return new Specification(rs.getInt("id"), rs.getString("code"), rs.getString("name"),rs.getDate("date"),rs.getInt("degreeofneed") ,rs.getString("description"),rs.getString("entry"),rs.getString("font"),rs.getString("outt"),rs.getString("destiny"),rs.getString("restriction"),rs.getString("process"),rs.getString("colateraleffect"));
+		return new Specification(rs.getInt("id"), rs.getString("code"), rs.getString("name"),rs.getDate("date"),rs.getInt("degreeofneed") ,rs.getString("description"),rs.getString("entry"),rs.getString("font"),rs.getString("outt"),rs.getString("destiny"),rs.getString("restriction"),rs.getString("process"),rs.getString("colateraleffect"),rs.getInt("requirementId"));
 	}
 	
 }

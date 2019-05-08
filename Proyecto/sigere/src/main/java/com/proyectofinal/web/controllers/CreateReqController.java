@@ -39,7 +39,6 @@ public class CreateReqController{
 			return new ModelAndView("redirect:/home");
 		}
 		RequirementService.createRequirement(requirement);
-		RequirementService.linkRequirementWithProject(requirement, new Project(id, null, null, null));
-	    return new ModelAndView("redirect:/project?id="+id);
+		return new ModelAndView("redirect:/project?id="+id);
 	  }
 }

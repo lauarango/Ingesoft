@@ -9,10 +9,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<title>Bienvenido</title>
 	<style>
+		.lupa{
+			color:white;
+		}
 	
 		body {
           font-family: Arial, sans-serif;
@@ -70,38 +74,39 @@
 		}
 		
 		* {
-		  box-sizing: border-box;
+			box-sizing: border-box;
 		}
-		
-		.my-header .search-container {
-		  float: right;
-		}
-		
-		.my-header .log-out {
-		  float: right;
-		}
-		
-		.my-header input[type=text] {
-		  padding: 6px;
-		  margin-top: 8px;
-		  font-size: 17px;
-		  border: none;
-		}
-		
-		.my-header .search-container button {
-		  float: right;
-		  padding: 6px 10px;
-		  margin-top: 8px;
-		  margin-right: 16px;
-		  background:#990000;
-		  font-size: 17px;
-		  border: none;
-		  cursor: pointer;
-		}
-		
-		.my-header .search-container button:hover {
-		  background: #800000;
-		}
+			
+			.search-container {
+			  float: right;
+			}
+			
+			.log-out {
+			  float: right;
+			}
+			
+			input[type=text] {
+			  padding: 6px;
+			  margin-top: 8px;
+			  font-size: 17px;
+			  border: none;
+			}
+			
+			.search-container button {
+			  float: right;
+			  padding: 6px 10px;
+			  margin-top: 8px;
+			  margin-right: 16px;
+			  background:#990000;
+			  font-size: 17px;
+			  border: none;
+			  cursor: pointer;
+			}
+			
+			.search-container button:hover {
+			  background: #800000;
+			}
+			
 		
 		.Projects {
 			text-align:center; 
@@ -149,87 +154,92 @@
 		  max-width: 960px;
 		  margin:0px 100px;
 		}
-		.my-header .dropdown-content {
-		  display: none;
-		  position: absolute;
-		  background-color: #f9f9f9;
-		  min-width: 160px;
-		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		  z-index: 1;
-		}
-		
-		.my-header .dropdown-content a {
-		  float: none;
-		  color: black;
-		  padding: 12px 16px;
-		  text-decoration: none;
-		  display: block;
-		  text-align: left;
-		}
-		
-		.my-header .dropdown-content a:hover {
-		  background-color: #ddd;
-		}
-		
-		.my-header .dropdown:hover .dropdown-content {
-		  display: block;
-		}	
-        .my-header .dropdown {
-          float: right;
-          overflow: hidden;
-        }
         
         .CreateProject{
         	float: right;
           	overflow: hidden;
         }
-
-        .my-header .dropdown .dropbtn {
-          font-size: 16px;  
-          border: none;
-          outline: none;
-          color: white;
-          padding: 14px 16px;
-          background-color: #333;
-          font-family: inherit;
-          margin: 0;
-        }
-		.my-header .dropdown:hover .dropdown-content {
-		  display: block;
-		}
+		.dropbtn {
+			  background-color: #333;
+			  color: white;
+			  padding: 16px;
+			  font-size: 16px;
+			  border: none;
+			  cursor: pointer;
+			  float:right;
+			}
+			
+			.dropdown {
+			  float:right;
+			  
+			  
+			}
+			
+			.dropdown-content {
+			  display: none;
+			  position:relative;
+			  background-color: #595959;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+			
+			.dropdown-content a {
+			  color: white;
+			  padding: 12px 16px;
+			  text-decoration: none;
+			  display: block;
+			  background-color: #595959;
+			}
+			
+			.dropdown-content a:hover 
+			{background-color: #595959;}
+			
+			.dropdown:hover .dropdown-content {
+			  display: block;
+			}
+			
+			.dropdown:hover .dropbtn {
+			  background-color: #333;
+			}
+			
+			.btn, .btn:hover {
+	          background-color:#333;
+	          border: none;
+	          color: white;
+	          font-size: 20px;
+	          cursor: pointer;
+	          float:bottom;
+	          padding: 16px 35px;
+	        }
 		
 	</style>
 </head>
 <body>
   	<div id="navbar" class="my-header">
-  	 	<img src="https://i.ibb.co/6rdz9XG/Gato-Sigere.png" width="170" height="60">
+  	 	<img src="https://i.ibb.co/YZsKKwR/gato-Blanco.png"" width="170" height="60">
   	 	<div class="dropdown">
-		    <button class="dropbtn">Bienvenido,${firstname}
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content">
-		      <div class="Profile">
-		  	 		<!--<form action="logout" method="get">
-		  	 			button class="button">Cerrar Sesión</button>
-		  	 		</form>-->
-		  	 		<button class="button">Perfil del Usuario</button>
-		  	 </div>
-		      <div class="Log-out">
-		  	 		<form action="logout" method="get">
-		  	 			<button class="button">Cerrar Sesión</button>
-		  	 		</form>
-		  	 </div>
-		    </div>
- 	    </div> 
+	  			<button class="dropbtn">Bienvenido,${firstname}  <i class="fa fa-caret-down"></i></button>
+	  			<div class="dropdown-content">
+	    			<div class="Profile">
+	                   <button class="button">Perfil del Usuario</button>
+	               </div>
+	                <div class="Log-out">
+	                      <form action="logout" method="get">
+	                          <button class="button">Cerrar Sesión</button>
+	                      </form>
+	               </div>
+	    		</div>
+			</div>
   	 	<div class="search-container">
 		    <form action="/action_page.php">
-		      <input type="text" placeholder="Buscar" name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    </form>
+			      <input type="text" placeholder="Buscar" name="search">
+			      <button type="submit"><i class="fa fa-search lupa"></i></button>
+			</form>
 	    </div>
 	    <div class="CreateProject">
 		    <form action="crearproyecto">
-				<button class="button">Crear Nuevo Proyecto</button>
+				<button class="btn"><i class="fa fa-plus-circle"></i></button>
 			</form>
 		</div>
 	
@@ -245,19 +255,8 @@
 	         
 	  	</div>
 	 </div>
-	 
-  	<script>
-		window.onscroll = function() {myFunction()};
-		var navbar = document.getElementById("Title");
-		var sticky = navbar.offsetTop;
-		function myFunction() {
-		  if (window.pageYOffset >= sticky) {
-		    navbar.classList.add("sticky")
-		  } else {
-		    navbar.classList.remove("sticky");
-		  }
-		}
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		
-	</script>
 </body>
 </html>

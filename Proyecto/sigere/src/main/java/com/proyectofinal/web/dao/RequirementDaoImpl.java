@@ -24,7 +24,7 @@ public class RequirementDaoImpl implements RequirementDao {
 	  
 	@Override
 	public List<Requirement> getRequirementByProjectId(int id) {
-		String sql = "SELECT * FROM requirements INNER JOIN requirementsxproject ON(requirementsxproject.requirementid = requirements.id) WHERE projectid = '" + id + "'";
+		String sql = "SELECT * FROM requirements WHERE projectid = '" + id + "'";
 		return jdbcTemplate.query(sql, new RequirementMapper());
 	}
 
@@ -35,18 +35,11 @@ public class RequirementDaoImpl implements RequirementDao {
 	}
 	@Override
 	public void createRequirement(ReqCreate requirement) {
-		String sql = "insert into requirements(type, name, description, status) values(?,?,?,?)";
-	    jdbcTemplate.update(sql, new Object[] { requirement.getType(), requirement.getName(), requirement.getDescription(),requirement.getStatus()});
+		String sql = "insert into requirements(reqId,type, name, description, status,version,projectId) values(?,?,?,?,?,?,?)";
+	    jdbcTemplate.update(sql, new Object[] { requirement.getReqId(),requirement.getType(), requirement.getName(), requirement.getDescription(),requirement.getStatus(), requirement.getVersion(), requirement.getProjectId()});
 		
 	}
 
-	@Override
-	public void linkRequirementWithProject(ReqCreate createdReq, Project project) {
-		String sql = "SELECT * FROM requirements WHERE name = '" + createdReq.getName() + "'";
-		final Requirement requirement = jdbcTemplate.query(sql, new RequirementMapper()).get(0);
-		sql = "INSERT INTO requirementsxproject(projectId, requirementId) VALUES (?, ?)";
-		jdbcTemplate.update(sql, new Object[] { project.getId(), requirement.getId()});
-	}
 
 
 }
@@ -55,7 +48,7 @@ class RequirementMapper implements RowMapper<Requirement> {
 
 	@Override
 	public Requirement mapRow(ResultSet rs, int rowNum) throws SQLException {
-		return new Requirement(rs.getInt("id"), rs.getString("type"), rs.getString("name"), rs.getString("description"),rs.getString("status"));
+		return new Requirement(rs.getInt("id"), rs.getString("reqId"),rs.getString("type"), rs.getString("name"), rs.getString("version"),rs.getString("description"),rs.getString("status"),rs.getInt("projectId"));
 	}
 	
 }

@@ -13,6 +13,10 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 		<style>
+		.lupa{
+			color:white;
+		}
+		
 /* --------------------------------------- Calendar --------------------------------------------------------------------------*/
 		 .cld-main{
 		   width: 660px;
@@ -619,7 +623,7 @@
 	</head>
 	<body>
 	  	<div id="navbar" class="my-header">
-	  	 	<img src="https://i.ibb.co/6rdz9XG/Gato-Sigere.png" width="170" height="60">
+	  	 	<img src="https://i.ibb.co/YZsKKwR/gato-Blanco.png"" width="170" height="60">
 	  	 	<div class="dropdown">
 	  			<button class="dropbtn">Bienvenido,${firstname}  <i class="fa fa-caret-down"></i></button>
 	  			<div class="dropdown-content">
@@ -637,7 +641,7 @@
 	  	 	<div class="search-container">
 			    <form action="/action_page.php">
 			      <input type="text" placeholder="Buscar" name="search">
-			      <button type="submit"><i class="fa fa-search"></i></button>
+			      <button type="submit"><i class="fa fa-search lupa"></i></button>
 			    </form>
 		    </div>
 			<button class="button">Notas</button>
@@ -683,6 +687,7 @@
     								<tr>
 		                        		<th scope="col">ID</th>
 		                        		<th scope="col">Nombre</th>
+		                        		<th scope="col">Tipo</th>
 		                        		<th scope="col"><em class="fa fa-cog"></em></th>
 	                    			</tr> 
 	                  			</thead>

@@ -71,16 +71,16 @@
 		
 		.btn-lg, .btn-info, .btn-lg:visited, .bt-info:visited,.btn-lg:focus, .bt-info:focus,.btn-lg:active, .bt-info:active{
 			
-		  background-color: #ff4d4d;
-		  color:black;
-          border-color:black;
+		  background-color: black;
+		  color: white;
+          border-color: black;
 		
 		}
         
         .btn-lg:hover, .btn-info:hover{
-        	background-color:#cc0000;
-            color:black;
-            border-color:black;
+        	background-color: black;
+		  	color: white;
+         	 	border-color: black;
         }
 		
 		/* Supporting marketing content */
@@ -133,16 +133,26 @@
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-sm-6 form-group">
+									<label>Id</label>
+									<input type="text" placeholder="Escriba el id..." name="reqId" class="form-control" required>
+								</div>	
+								<div class="col-sm-6 form-group">
 									<label>Tipo</label>
 									<select name="type" class="form-control">
 			                            <option value="RF">Requerimiento Funcional</option>
 			                            <option value="RNF">Requerimiento No Funcional</option>
 	                        		</select>
 								</div>
+							</div>
+							<div class="row">	
 								<div class="col-sm-6 form-group">
 									<label>Nombre</label>
-									<input type="text" placeholder="Escriba su nombre..." name="name" class="form-control" required>
+									<input type="text" placeholder="Escriba el nombre..." name="name" class="form-control" required>
 								</div>	
+								<div class="col-sm-6 form-group">
+    								<label>Versión</label>
+    								<input type="text" placeholder="Escriba la versión..." name="version" class="form-control" required>
+    							</div>
 							</div>	
 							<div class="row">
 								<div class="col-sm-6 form-group">
@@ -156,6 +166,7 @@
 								</div>	
 							</div>
 							<div class="row">	
+								
     							<div class="col-sm-6 form-group" style="padding:0px 16px">
      						 		<label>Estado</label><br>
 							          <input type="radio" name="status" value="red"> Rojo
@@ -164,33 +175,40 @@
 							          <input type="radio" name="status" value="purple"> Morado
 							          <input type="radio" name="status" value="green"> Verde<br>  
     							</div>
+    							
   							</div>	
+							<input type="hidden" id="projId" name="projectId">
+							<input type="hidden" id="idd" name="id">
 							<div class="row" style="align:center" >
                             	<center>
                                   <div class="col-sm-5">
                                       <button type="submit" class="btn btn-lg btn-info">Aceptar</button>
                                   </div>
                                   <div class="col-sm-5 ">
-                                      <button type="button" class="btn btn-lg btn-info">Cancelar</button>
+                                      <button type="button" id="idForm" class="btn btn-lg btn-info">Cancelar</button>
                                   </div>
+                                  
                                 </center>
 							</div>	
-						</div>
-						<input type="hidden" id="idd" name="id">
-						<script>
-							function getQueryVariable(){
-								var query = window.location.search.substring(1);
-								var vars = query.split("&");
-								for (var i=0;i<vars.length;i++) {
-									var pair = vars[i].split("=");
-								    if(pair[0] == "id")
-								    	var id=pair[1];
-								    	{return id}
+							<script>
+								function getQueryVariable(){
+									var query = window.location.search.substring(1);
+									var vars = query.split("&");
+									for (var i=0;i<vars.length;i++) {
+										var pair = vars[i].split("=");
+									    if(pair[0] == "id")
+									    	var id=pair[1];
+									    	{return id}
+									}
+									return(false);
 								}
-								return(false);
-							}
-							document.getElementById("idd").value = getQueryVariable();
-						</script>
+								document.getElementById("idd").value = getQueryVariable();
+								document.getElementById("projId").value=getQueryVariable();
+								document.getElementById("idForm").onclick= function(){
+									location.href="http://localhost:8080/sigere/project?id="+ getQueryVariable();
+								}
+							</script>
+						</div>
 					</form:form> 
 			</div>
 		</div>

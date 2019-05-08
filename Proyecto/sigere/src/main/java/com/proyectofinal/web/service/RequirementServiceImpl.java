@@ -30,9 +30,6 @@ public class RequirementServiceImpl implements RequirementService {
 	}
 	
 
-	@Override
-	public void linkRequirementWithProject(ReqCreate requirement, Project project) {
-		requirementDao.linkRequirementWithProject(requirement, project);
-	}
+	
 
 }

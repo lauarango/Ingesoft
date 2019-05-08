@@ -14,6 +14,4 @@ public interface RequirementService{
 	
 	void createRequirement(ReqCreate requirement);
 	
-	void linkRequirementWithProject(final ReqCreate requirement, final Project project);
-
 }
