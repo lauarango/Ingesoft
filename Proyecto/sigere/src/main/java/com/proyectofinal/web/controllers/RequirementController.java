@@ -35,8 +35,8 @@ public class RequirementController {
 		final Requirement requirement = requirementService.getRequirementById(id);
 		final StringBuilder builder = new StringBuilder();
 		for (Specification r : specifications) {
-			builder.append("Description: "+r.getDescr()+" Name:"+ r.getName()+" Id:"+ r.getId());
+			builder.append("<div class=\"mySlides\"><B>Código:</B><p>"+r.getCode()+"</p><br><B>Nombre:</B><p>"+r.getName()+"</p><br><B>Fecha:</B><p>"+r.getDate()+"</p><br><B>Grado de Necesidad:</B><p>"+r.getDegreeOfNeed()+"</p><br><B>Descripción:</B><p>"+r.getDescr()+"</p><br><B>Entradas:</B><p>"+r.getEntry()+"</p><br><B>Fuente:</B><p>"+r.getFont()+"</p><br><B>Salidas:</B><p>"+r.getOut()+"</p><br><B>Destino:</B><p>"+r.getDestiny()+"</p><br><B>Restricciones:</B><p>"+r.getRestriction()+"</p><br><B>Proceso:</B><p>"+r.getProcess()+"</p><br><B>Efecto Colateral:</B><p>"+r.getColateralEffect()+"</p><br></div>");
 		}
-	    return new ModelAndView("requirement").addObject("specifications", builder.toString());
+	    return new ModelAndView("requirement").addObject("specifications", builder.toString()).addObject("id",requirement.getId()).addObject("firstname",user.getFirstname()).addObject("idFromUser",requirement.getReqId());
 	  }
 }

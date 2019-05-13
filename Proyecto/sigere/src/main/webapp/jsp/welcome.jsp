@@ -77,37 +77,35 @@
 			box-sizing: border-box;
 		}
 			
-			.search-container {
-			  float: right;
-			}
-			
-			.log-out {
-			  float: right;
-			}
-			
-			input[type=text] {
-			  padding: 6px;
-			  margin-top: 8px;
-			  font-size: 17px;
-			  border: none;
-			}
-			
-			.search-container button {
-			  float: right;
-			  padding: 6px 10px;
-			  margin-top: 8px;
-			  margin-right: 16px;
-			  background:#990000;
-			  font-size: 17px;
-			  border: none;
-			  cursor: pointer;
-			}
-			
-			.search-container button:hover {
-			  background: #800000;
-			}
-			
+				.search-container {
+		  float: right;
+		}
 		
+		.log-out {
+		  float: right;
+		}
+		
+		input[type=text] {
+		  padding: 6px;
+		  margin-top: 8px;
+		  font-size: 17px;
+		  border: none;
+		}
+		
+		.search-container button {
+		  float: right;
+		  padding: 6px 10px;
+		  margin-top: 8px;
+		  margin-right: 16px;
+		  background:#990000;
+		  font-size: 17px;
+		  border: none;
+		  cursor: pointer;
+		}
+		
+		.search-container button:hover {
+		  background: #800000;
+		}
 		.Projects {
 			text-align:center; 
 			color:red;
@@ -124,7 +122,7 @@
         .row > .column {
           padding: 8px;
         }
-        /* Create three equal columns that floats next to each other */
+        /* Create four equal columns that floats next to each other */
         .column {
           float: left;
           width: 25%; 
@@ -160,61 +158,58 @@
           	overflow: hidden;
         }
 		.dropbtn {
-			  background-color: #333;
-			  color: white;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			  float:right;
-			}
+			background-color: #333;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			float:right;
+		}
 			
-			.dropdown {
-			  float:right;
-			  
-			  
-			}
+		.dropdown {
+		  float:right;			  
+		}
 			
-			.dropdown-content {
-			  display: none;
-			  position:relative;
-			  background-color: #595959;
-			  min-width: 160px;
-			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			  z-index: 1;
-			}
+		.dropdown-content {
+		  display: none;
+		  position:relative;
+		  background-color: #595959;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
 			
-			.dropdown-content a {
-			  color: white;
-			  padding: 12px 16px;
-			  text-decoration: none;
-			  display: block;
-			  background-color: #595959;
-			}
+		.dropdown-content a {
+		  color: white;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  background-color: #595959;
+		}
 			
-			.dropdown-content a:hover 
-			{background-color: #595959;}
+		.dropdown-content a:hover 
+		{background-color: #595959;}
 			
-			.dropdown:hover .dropdown-content {
-			  display: block;
-			}
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
 			
-			.dropdown:hover .dropbtn {
-			  background-color: #333;
-			}
+		.dropdown:hover .dropbtn {
+		  background-color: #333;
+		}
 			
-			.btn, .btn:hover {
-	          background-color:#333;
-	          border: none;
-	          color: white;
-	          font-size: 20px;
-	          cursor: pointer;
-	          float:bottom;
-	          padding: 16px 35px;
-	        }
-		
-	</style>
-</head>
+		.btn, .btn:hover {
+	      background-color:#333;
+	      border: none;
+	      color: white;
+	      font-size: 20px;
+	      cursor: pointer;
+	      float:bottom;
+	      padding: 16px 35px;
+	     }
+		</style>
+	</head>
 <body>
   	<div id="navbar" class="my-header">
   	 	<img src="https://i.ibb.co/YZsKKwR/gato-Blanco.png"" width="170" height="60">

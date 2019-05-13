@@ -12,4 +12,8 @@ public interface UserService {
   boolean existsUser(final User user);
   
   int getIdByUser(final User user);
+  
+  User getUserById(final int id);
+  
+  int getIdByEmail(final String email);
 }

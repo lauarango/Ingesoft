@@ -149,6 +149,11 @@
 	    	float: right;
 			padding: 0px 10px;
 		 }
+		 .membersForm{
+	        	float: right;
+	          	overflow: hidden;
+	          	color:white;
+	      }
 		* {
 			box-sizing: border-box;
 		}
@@ -621,6 +626,7 @@
 
 		</style>
 	</head>
+	
 	<body>
 	  	<div id="navbar" class="my-header">
 	  	 	<img src="https://i.ibb.co/YZsKKwR/gato-Blanco.png"" width="170" height="60">
@@ -645,8 +651,14 @@
 			    </form>
 		    </div>
 			<button class="button">Notas</button>
-			<button class="button">Miembros</button>
-			<div class="CreateRequeriment">
+			<!--<button class="button">Miembros</button>-->
+			<div class="membersForm">
+				<a href="members?id=${id}"><button class="btn"><i class="fa fa-users"></i></button></a>
+				<!--<form id="MembersForm" action="members">
+	      			<input type="submit" value="Miembros" />
+	    		</form>-->
+	    	</div>
+	    	<div class="CreateRequeriment">
 	            <a href="crearrequerimiento?id=${id}"><button class="btn"><i class="fa fa-plus-circle"></i></button></a>
 			</div>
 		</div>

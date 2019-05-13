@@ -13,6 +13,8 @@
     <bean id="requirementService" class="com.proyectofinal.web.service.RequirementServiceImpl" />
     <bean id="specificationDao" class="com.proyectofinal.web.dao.SpecificationDaoImpl"/>
     <bean id="specificationService" class="com.proyectofinal.web.service.SpecificationServiceImpl"/>
+    <bean id="memberDao" class="com.proyectofinal.web.dao.MemberDaoImpl"/>
+    <bean id="memberService" class="com.proyectofinal.web.service.MemberServiceImpl"/>
     
     
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
