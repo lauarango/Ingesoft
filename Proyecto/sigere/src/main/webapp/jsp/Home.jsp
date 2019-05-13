@@ -14,55 +14,6 @@
 	  font-family: "Arial", sans-serif;
 	  height: 100vh;
 	}
-	
-/* The Modal (background) */
-		/* The Modal (background) */
-		.modal {
-			display:none;
-		    position: fixed;
-		    z-index: 1;
-		    left: 0;
-		    top: 0;
-		    width: 100%;
-		    height: 100%;
-		    overflow: auto;
-		    background-color: rgba(0,0,0,0.4);
-		}
-		
-		/* Modal Content */
-		.modal-content {
-		    background-color: #fefefe;
-		    margin: 4% auto 15% auto;
-		    border: 1px solid #888;
-		    width: 40%; 
-			padding-bottom: 30px;
-		}
-		
-		/* The Close Button (x) */
-		.close {
-		    position: absolute;
-		    right: 25px;
-		    top: 0;
-		    color: #000;
-		    font-size: 35px;
-		    font-weight: bold;
-		}
-		.close:hover,.close:focus {
-		    color: red;
-		    cursor: pointer;
-		}
-		
-		/* Add Zoom Animation */
-		.animate {
-		    animation: zoom 0.6s
-		}
-		@keyframes zoom {
-		    from {transform: scale(0)} 
-		    to {transform: scale(1)}
-		}
-		
-		
-
 	a:link {
 	  color: #000000;
 	  display:inline-block;
@@ -350,17 +301,15 @@
 	}
 	   
 	        
-	    </style>
-	    <!-- Required meta tags -->
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	    <!-- Bootstrap CSS -->
-	    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	    
-	    <title>SIGERE</title>
-	</head>
-	<body>
+	</style>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<title>SIGERE</title>
+</head>
+<body>
 	
 	<!-- Barra -->
 	<div class="wrapper fadeInDown">
